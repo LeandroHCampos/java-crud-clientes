@@ -7,7 +7,6 @@ package gui;
 import dao.ClienteDAO;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
