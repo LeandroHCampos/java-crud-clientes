@@ -7,15 +7,15 @@ O sistema permite realizar operações CRUD (Create, Read, Update, Delete) para 
 Os dados dos clientes, como nome, CPF, e-mail, telefone, endereço e data de nascimento, são armazenados e manipulados no banco de dados.
 
 </div>
-
+<div align="center">
 ## Tela Principal
-
+</div>
 <p align="center">
   <img src="imagens/tela-principal.png" alt="Tela Principal">
 </p>
-
+<div align="center">
 ## Tela de Cadastro
-
+</div>
 <p align="center">
   <img src="imagens/tela-cadastro.png" alt="Tela de Cadastro">
 </p>
