@@ -1,8 +1,10 @@
-
 # CRUD de Cadastro de Clientes
 
 Este é um sistema de cadastro de clientes desenvolvido em Java, utilizando JDBC para interagir com o banco de dados MySQL. O sistema permite realizar operações CRUD (Create, Read, Update, Delete) para o gerenciamento de clientes. Os dados dos clientes, como nome, CPF, e-mail, telefone, endereço e data de nascimento, são armazenados e manipulados no banco de dados.
 
+## Tela Principal
+
+![Tela Principal](imagens/tela-principal.png)
 
 ## Requisitos
 
