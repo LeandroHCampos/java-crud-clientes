@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import modelo.Cliente;
 
 /**
@@ -26,7 +27,9 @@ public class ClienteGUI extends javax.swing.JFrame {
         getRootPane().putClientProperty("JRootPane.titleBarBackground", new Color(60, 63, 65));
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.WHITE);
         getRootPane().putClientProperty("JRootPane.titleBarEmbedded", true);
+        
         initComponents();
+        
         jFormattedTextField3.putClientProperty("JComponent.outline", new Color(0,0,0));
         jTextField2.putClientProperty("JComponent.outline", new Color(0,0,0));
         jTextField3.putClientProperty("JComponent.outline", new Color(0,0,0));
@@ -50,6 +53,9 @@ public class ClienteGUI extends javax.swing.JFrame {
          );
     } catch (java.text.ParseException e) {
     }
+        SwingUtilities.invokeLater(() -> {
+        getRootPane().requestFocusInWindow();
+    });
     }
     private Cliente clienteParaEdicao;
 

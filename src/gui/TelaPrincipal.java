@@ -7,12 +7,14 @@ package gui;
 import dao.ClienteDAO;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -268,25 +270,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Configuração dos botões para "Sim" e "Não"
+        UIManager.put("OptionPane.noButtonText", "Não");
+        UIManager.put("OptionPane.yesButtonText", "Sim");
+
         int linhaSelecionada = jTable1.getSelectedRow();
 
         if (linhaSelecionada != -1) {
             String cpf = jTable1.getValueAt(linhaSelecionada, 1).toString();
 
+            // Criando o JLabel com a mensagem
+            JLabel label = new JLabel("Tem certeza que deseja apagar o cliente com CPF: " + cpf + "?");
+
+            // Exibindo o JOptionPane sem ícone, apenas com os botões "Sim" e "Não"
             int confirmar = JOptionPane.showConfirmDialog(
-                this, 
-                "Tem certeza que deseja apagar o cliente com CPF: " + cpf + "?", 
-                "Confirmar exclusão", 
-                JOptionPane.YES_NO_OPTION
+                this,
+                label, // Usando JLabel para a mensagem
+                "Confirmar exclusão", // Título da janela
+                JOptionPane.YES_NO_OPTION, // Botões Sim e Não
+                JOptionPane.PLAIN_MESSAGE  // Remove o ícone de interrogação
             );
 
+            // Se o usuário clicar em "Sim", realizar a exclusão
             if (confirmar == JOptionPane.YES_OPTION) {
                 ClienteDAO dao = new ClienteDAO();
                 dao.remover(cpf);
-                carregarClientesNaTabela(); // atualiza a tabela
+                carregarClientesNaTabela(); // Atualiza a tabela
                 JOptionPane.showMessageDialog(this, "Cliente apagado com sucesso!");
             }
         } else {
+            // Se não houver cliente selecionado
             JOptionPane.showMessageDialog(this, "Selecione um cliente para apagar.");
         }
     }//GEN-LAST:event_jButton2ActionPerformed

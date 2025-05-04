@@ -13,8 +13,6 @@ public class Main {
         // Aplica o tema FlatLaf
         UIManager.setLookAndFeel(new FlatLightLaf());
 
-        // Fundo da janela
-        UIManager.put("Panel.background", new Color(250, 250, 250)); // #FAFAFA
 
         // Cor das linhas alternadas (zebradas)
         UIManager.put("Table.alternateRowColor", new Color(244,244,244)); // #FFF3E0 (laranja claro)
@@ -46,6 +44,14 @@ public class Main {
         UIManager.put("Button.focusedBackground", new Color(255,204,128));
         UIManager.put("Button.focusedBorderColor", new Color(0, 0, 0));
         
+        UIManager.put("Button.default.arc", UIManager.get("Button.arc"));
+        UIManager.put("Button.default.borderWidth", UIManager.get("Button.borderWidth"));
+        UIManager.put("Button.default.borderColor", UIManager.get("Button.borderColor"));
+        UIManager.put("Button.default.hoverBackground", UIManager.get("Button.hoverBackground"));
+        UIManager.put("Button.default.hoverBorderColor", UIManager.get("Button.hoverBorderColor"));
+        UIManager.put("Button.default.pressedBackground", UIManager.get("Button.pressedBackground"));
+        UIManager.put("Button.default.focusedBackground", UIManager.get("Button.focusedBackground"));
+        UIManager.put("Button.default.focusedBorderColor", UIManager.get("Button.focusedBorderColor"));
         
             
         } catch (UnsupportedLookAndFeelException e) {
