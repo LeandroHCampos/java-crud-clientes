@@ -6,7 +6,7 @@ Este é um sistema de cadastro de clientes desenvolvido em Java, utilizando JDBC
 
 ![Tela Principal](imagens/tela-principal.png)
 
-## Tela Principal
+## Tela de Cadastro
 
 ![Tela de Cadastro](imagens/tela-cadastro.png)
 
