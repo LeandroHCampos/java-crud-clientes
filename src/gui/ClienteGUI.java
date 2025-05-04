@@ -10,7 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import modelo.Cliente;
 
 /**
@@ -28,7 +27,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.WHITE);
         getRootPane().putClientProperty("JRootPane.titleBarEmbedded", true);
         initComponents();
-        jTextField1.putClientProperty("JComponent.outline", new Color(0,0,0));
+        jFormattedTextField3.putClientProperty("JComponent.outline", new Color(0,0,0));
         jTextField2.putClientProperty("JComponent.outline", new Color(0,0,0));
         jTextField3.putClientProperty("JComponent.outline", new Color(0,0,0));
         jTextField5.putClientProperty("JComponent.outline", new Color(0,0,0));
@@ -38,6 +37,14 @@ public class ClienteGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         try {
             javax.swing.text.MaskFormatter mascaraData = new javax.swing.text.MaskFormatter("##/##/####");
+            javax.swing.text.MaskFormatter mascaraCpf = new javax.swing.text.MaskFormatter("###.###.###-##");
+            javax.swing.text.MaskFormatter mascaraTelefone = new javax.swing.text.MaskFormatter("(##)#########");
+            jFormattedTextField2.setFormatterFactory(
+                new javax.swing.text.DefaultFormatterFactory(mascaraTelefone)
+            );
+            jFormattedTextField3.setFormatterFactory(
+                new javax.swing.text.DefaultFormatterFactory(mascaraCpf)
+            );
             jFormattedTextField1.setFormatterFactory(
                 new javax.swing.text.DefaultFormatterFactory(mascaraData)
          );
@@ -50,7 +57,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         this(telaPrincipal); // chama o construtor já existente
         this.clienteParaEdicao = cliente;
         preencherCamposComCliente(cliente);
-        jTextField1.setEditable(false); // CPF não pode ser editado
+        jFormattedTextField3.setEditable(false); // CPF não pode ser editado
         jButton1.setText("Salvar alterações"); // muda o texto do botão
         jLabel1.setText("Editar Cliente");
     }
@@ -61,7 +68,7 @@ public class ClienteGUI extends javax.swing.JFrame {
     }
     
     private void preencherCamposComCliente(Cliente cliente) {
-    jTextField1.setText(cliente.getCpf());
+    jFormattedTextField3.setText(cliente.getCpf());
     jTextField2.setText(cliente.getNome());
     jTextField3.setText(cliente.getEmail());
     jFormattedTextField2.setText(cliente.getTelefone());
@@ -83,7 +90,6 @@ public class ClienteGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -97,6 +103,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,12 +115,6 @@ public class ClienteGUI extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setText("CPF:");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -182,8 +183,8 @@ public class ClienteGUI extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -193,7 +194,7 @@ public class ClienteGUI extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -247,16 +248,12 @@ public class ClienteGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Cliente cliente = new Cliente();
         
         //Validaçao dos dados
-        if(jTextField1.getText().isEmpty()||
+        if(jFormattedTextField3.getText().isEmpty()||
            jTextField2.getText().isEmpty()||
            jTextField3.getText().isEmpty()||
            jFormattedTextField2.getText().isEmpty()||
@@ -267,7 +264,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         }else{
 
 //CPF         
-            cliente.setCpf(jTextField1.getText()); // CPF
+            cliente.setCpf(jFormattedTextField3.getText()); // CPF
 //Nome  
             cliente.setNome(jTextField2.getText()); // Nome
 //Email
@@ -327,7 +324,7 @@ public class ClienteGUI extends javax.swing.JFrame {
     }
 
         // Limpar campos
-        jTextField1.setText("");
+        jFormattedTextField3.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jFormattedTextField2.setText("");
@@ -338,7 +335,7 @@ public class ClienteGUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("");
+        jFormattedTextField3.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jFormattedTextField2.setText("");
@@ -398,6 +395,7 @@ public class ClienteGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -406,7 +404,6 @@ public class ClienteGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
