@@ -6,6 +6,10 @@ Este é um sistema de cadastro de clientes desenvolvido em Java, utilizando JDBC
 
 ![Tela Principal](imagens/tela-principal.png)
 
+## Tela Principal
+
+![Tela de Cadastro](imagens/tela-cadastro.png)
+
 ## Requisitos
 
 - Java (versão 8 ou superior)
