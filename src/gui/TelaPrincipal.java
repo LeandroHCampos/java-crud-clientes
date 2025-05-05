@@ -299,7 +299,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         } else {
             // Se não houver cliente selecionado
-            JOptionPane.showMessageDialog(this, "Selecione um cliente para apagar.");
+            JOptionPane.showMessageDialog(this, "Selecione um cliente para apagar.", "Aviso", JOptionPane.OK_OPTION);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -317,12 +317,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 String cpf = jTable1.getValueAt(linhaSelecionada, 1).toString();
 
                 ClienteDAO dao = new ClienteDAO();
-                Cliente clienteSelecionado = dao.buscarPorCpf(cpf); // você pode criar esse método
+                Cliente clienteSelecionado = dao.buscarPorCpf(cpf); 
 
                 ClienteGUI clienteGUI = new ClienteGUI(this, clienteSelecionado);
                 clienteGUI.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this, "Selecione um cliente para editar.");
+                JOptionPane.showMessageDialog(this, "Selecione um cliente para editar.", "Aviso", JOptionPane.OK_OPTION);
             }
     }//GEN-LAST:event_jButton4ActionPerformed
 
