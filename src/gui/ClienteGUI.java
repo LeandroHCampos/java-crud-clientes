@@ -41,7 +41,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         try {
             javax.swing.text.MaskFormatter mascaraData = new javax.swing.text.MaskFormatter("##/##/####");
             javax.swing.text.MaskFormatter mascaraCpf = new javax.swing.text.MaskFormatter("###.###.###-##");
-            javax.swing.text.MaskFormatter mascaraTelefone = new javax.swing.text.MaskFormatter("(##)#########");
+            javax.swing.text.MaskFormatter mascaraTelefone = new javax.swing.text.MaskFormatter("(##) #####-####");
             jFormattedTextField2.setFormatterFactory(
                 new javax.swing.text.DefaultFormatterFactory(mascaraTelefone)
             );
