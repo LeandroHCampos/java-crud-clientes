@@ -35,7 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getRootPane().putClientProperty("JRootPane.titleBarBackground", new Color(60, 63, 65));
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.WHITE);
         getRootPane().putClientProperty("JRootPane.titleBarEmbedded", true);
-        setTitle("CRUD"); // texto que aparece na barra
+        setTitle("Gerenciador de Clientes");
         
         initComponents();
         txtPesquisar.putClientProperty("JComponent.outline", new Color(0,0,0));
@@ -102,7 +102,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     modelo.setRowCount(0); // limpa a tabela antes de colocar os resultados
 
     ClienteDAO dao = new ClienteDAO();
-    List<Cliente> lista = dao.listarClientes(); // aqui você poderia ter um método listarClientesPorNome() também
+    List<Cliente> lista = dao.listarClientes(); 
 
     for (Cliente c : lista) {
         if (c.getNome().toLowerCase().contains(textoPesquisa) || c.getCpf().replaceAll("[^\\d]", "").contains(textoPesquisa)) {
@@ -295,7 +295,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 ClienteDAO dao = new ClienteDAO();
                 dao.remover(cpf);
                 carregarClientesNaTabela(); // Atualiza a tabela
-                JOptionPane.showMessageDialog(this, "Cliente apagado com sucesso!");
+                JOptionPane.showMessageDialog(this, "Cliente apagado com sucesso!", "Aviso", JOptionPane.DEFAULT_OPTION);
             }
         } else {
             // Se não houver cliente selecionado

@@ -176,10 +176,10 @@ public class ClienteGUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,11 +317,11 @@ public class ClienteGUI extends javax.swing.JFrame {
         ClienteDAO dao = new ClienteDAO();
             if (clienteParaEdicao == null) {
                 dao.adiciona(cliente);
-                JOptionPane.showMessageDialog(null, "Cliente " + cliente.getNome() + " inserido com sucesso!");
+                JOptionPane.showMessageDialog(null, "Cliente " + cliente.getNome() + " inserido com sucesso!", "Aviso", JOptionPane.DEFAULT_OPTION);
                
             } else {
                 dao.edita(cliente);
-                JOptionPane.showMessageDialog(null, "Cliente " + cliente.getNome() + " atualizado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Cliente " + cliente.getNome() + " atualizado com sucesso!", "Aviso", JOptionPane.DEFAULT_OPTION);
                 dispose();
             }
     }

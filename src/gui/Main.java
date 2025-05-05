@@ -15,16 +15,16 @@ public class Main {
 
 
         // Cor das linhas alternadas (zebradas)
-        UIManager.put("Table.alternateRowColor", new Color(244,244,244)); // #FFF3E0 (laranja claro)
+        UIManager.put("Table.alternateRowColor", new Color(244,244,244)); 
 
         // Cor da linha selecionada
-        UIManager.put("Table.selectionBackground", new Color(255, 204, 128)); // #FFCC80
+        UIManager.put("Table.selectionBackground", new Color(255, 204, 128)); 
         UIManager.put("sFont", new Font("Segoe UI", Font.PLAIN, 13));
 
         // Cor das linhas
         UIManager.put("Table.showHorizontalLines", true);
         UIManager.put("Table.showVerticalLines", false);
-        UIManager.put("Table.gridColor", new Color(224, 224, 224)); // Linhas sutis
+        UIManager.put("Table.gridColor", new Color(224, 224, 224));
 
         // Cabeçalho centralizado
         UIManager.put("TableHeader.centerTableColumnLabels", true);
@@ -34,10 +34,10 @@ public class Main {
 
         // Fonte moderna (opcional)
         UIManager.put("defaultFont", new Font("Segoe UI", Font.PLAIN, 13));
-        UIManager.put("Button.arc", 10); // Bordas arredondadas (0 = quadrado)
-        UIManager.put("Button.borderWidth", 1.5); // Largura da borda
+        UIManager.put("Button.arc", 10); 
+        UIManager.put("Button.borderWidth", 1.5); 
         UIManager.put("Button.borderColor", new Color(0, 0, 0));
-        UIManager.put("TextComponent.arc", 10); // Bordas arredondadas só nos campos de texto
+        UIManager.put("TextComponent.arc", 10);
         UIManager.put("Button.hoverBackground", new Color(255, 204, 128));
         UIManager.put("Button.hoverBorderColor", new Color(0, 0, 0));
         UIManager.put("Button.pressedBackground", new Color(255, 171, 64));
